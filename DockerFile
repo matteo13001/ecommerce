@@ -1,3 +1,17 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+#FROM openjdk:8-jdk-alpine
+#ARG target/Ecommerce-0.0.1-SNAPSHOT.jar 
+#COPY target/Ecommerce-0.0.1-SNAPSHOT.jar /app/Ecommerce-0.0.1-SNAPSHOT.jar
+#ENTRYPOINT ["java","-jar","/Ecommerce-0.0.1-SNAPSHOT.jar"]
+
+
+
+#FROM openjdk:jdkalp 	
+#ARG JAR_FILE=target/Ecommerce-0.0.1-SNAPSHOT.jar
+#COPY ${JAR_FILE} docker-spring.jar
+#ENTRYPOINT ["java", "-jar", "docker-spring.jar"]
+
+
+
+FROM openjdk:17-jdk-alpine
+COPY target/Ecommerce-0.0.1-SNAPSHOT.jar Ecommerce-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/Ecommerce-0.0.1-SNAPSHOT.jar"]
